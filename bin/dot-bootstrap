@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+set -e
+
+if ! [ -x "$(command -v ansible)" ]; then
+    echo "Installing ansible..."
+    sudo pacman -Syyu
+    sudo pacman -S ansible
+else
+    echo "Ansible is already installed!" 
+fi

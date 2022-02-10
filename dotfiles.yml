@@ -1,0 +1,24 @@
+- name: Local set up
+  hosts: local
+  vars_files: ./vars/vault.yaml
+  tasks:
+  - name: Update pacman (-Syu)
+    become: yes
+    pacman:
+      update_cache: yes
+      upgrade: yes
+  - name: Install base packages
+    become: yes
+    pacman: 
+      name: "{{ item.name }}"
+      state: "{{ item.state | default('present') }}"
+    loop: "{{ package_list }}"
+  - name: Install AUR packages
+    pacman:
+      name: "{{ item.name }}"
+      state: "{{ item.state | default('present') }}"
+      executable: yay
+    loop: "{{ aur_packages }}"
+  - name: Stow dotfiles
+    shell: pwd
+  

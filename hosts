@@ -1,5 +1,5 @@
 [local]
-localhost
+localhost ansible_become_pass='{{ sudo_pw }}'
 
 [local:vars]
 ansible_connection=local

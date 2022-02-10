@@ -4,7 +4,7 @@
 # credit goes to nick busey from homelabos for this neat little trick
 # https://gitlab.com/NickBusey/HomelabOS/-/issues/355
 
-if [ -d .git/ ]; then
+if [ -d ../.git/ ]; then
 rm .git/hooks/pre-commit
 cat <<EOT >> .git/hooks/pre-commit
 if ( git show :vars/vault.yml | grep -q "\$ANSIBLE_VAULT;" ); then
@@ -18,3 +18,5 @@ EOT
 fi
 
 chmod +x .git/hooks/pre-commit
+
+echo "Precommit hook installed!"

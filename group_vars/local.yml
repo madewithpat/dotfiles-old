@@ -1,0 +1,16 @@
+# Path to this repo on your filesystem
+# Used for stow
+dotfiles_path: $HOME/.dotfiles
+
+package_list:
+  - name: stow
+  - name: alacritty
+  - name: code
+  - name: neovim
+  - name: tmux
+  - name: zsh
+
+aur_packages:
+  - name: gotop
+  - name: zoom
+  - name: slack-wayland

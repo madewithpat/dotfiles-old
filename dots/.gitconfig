@@ -1,0 +1,14 @@
+[fetch]
+    prune = true
+[user]
+    name = Patrick Outler
+    email = outler.patrick@gmail.com
+[core]
+    autocrlf = input
+[github]
+    user = madewithpat
+[pull]
+    rebase = true
+
+[includeif "gitdir:./src/work"]
+    path = .gitconfig-griffin
